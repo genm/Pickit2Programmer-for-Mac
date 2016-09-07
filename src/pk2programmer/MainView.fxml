@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pk2programmer.MainViewController">
+   <children>
+        <MenuBar useSystemMenuBar="true">
+            <Menu text="File">
+            <items>
+               <MenuItem id="hexLoad" mnemonicParsing="false" onAction="#onClickedMenuItem" text="Hexファイルの読み込み" />
+            </items></Menu>
+         <Menu id="edit" mnemonicParsing="false" text="Edit">
+           <items>
+             <MenuItem mnemonicParsing="false" text="Action 1" />
+           </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Help">
+           <items>
+             <MenuItem mnemonicParsing="false" text="このアプリについて" />
+           </items>
+         </Menu>
+        </MenuBar>
+      <VBox>
+         <children>
+            <TextField fx:id="screen" editable="false" prefHeight="80.0" />
+            <HBox>
+               <children>
+                  <VBox>
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label text="PIC:" />
+                              <Label fx:id="picNameLabel" text="none">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Button id="ccButton" mnemonicParsing="false" onAction="#onClickedButton" text="Check Communication" />
+                        <Label text="Label" />
+                        <HBox>
+                           <children>
+                              <Button id="readButton" mnemonicParsing="false" onAction="#onClickedButton" text="Read" />
+                              <Button id="writeButton" mnemonicParsing="false" onAction="#onClickedButton" text="Write" />
+                              <Button id="eraseButton" mnemonicParsing="false" onAction="#onClickedButton" text="Erase" />
+                              <Button id="verifyButton" mnemonicParsing="false" onAction="#onClickedButton" text="Verify" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="Hex:" />
+                              <Label id="hexNameLabel" fx:id="hexNameLabel" text="none">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ProgressBar prefWidth="200.0" progress="0.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <CheckBox layoutX="40.0" layoutY="20.0" mnemonicParsing="false" text="/MCLR" />
+                        <CheckBox id="outputCheckBox" fx:id="outputCheckBox" mnemonicParsing="false" onAction="#onClickedCheckBox" text="出力">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </CheckBox>
+                        <Label text="電圧">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Spinner id="voltage" fx:id="voltageSpiner" editable="true">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Spinner>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <ListView editable="true" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+     
+   </children>
+</AnchorPane>
